@@ -37,6 +37,7 @@
                 <a href="index.jsp">Home</a>
                 <a href="tabla.jsp">Tabla</a>
                 <a href="registro.jsp">Registro</a>
+                <a href="acerca.html">Acerca de</a>
                 
             </div>
         </nav>
@@ -101,8 +102,25 @@
                         
                          <button  class="btn btn-danger bi bi-trash" onclick="eliminarTodo()" > Eliminar todos los datos</button>
                            
+                           <form class="d-flex" role="search">
+                                                  <input class="btn btn-light" type="text" name="txtSearch">
+                                                  <button class="btn btn-primary bi bi-search" type="submit"></button>
+
+                                        </form>
                         
-                        </div>          
+                        </div>    
+                        
+                         
+                                          <%
+                                                  String nameSearch = request.getParameter("txtSearch");
+                                                  if (nameSearch != null) {
+                                                            smt = conn.conectar().createStatement();
+                                                            rs = smt.executeQuery("SELECT * FROM final_progra.libro WHERE nombre LIKE" + " '%" + nameSearch + "%' ");
+                                                  } else {
+                                                            System.err.print("Error");
+                                                  }
+                                        %>
+                        
                         <br>
                                         
                      <table id="tabla1" class="table table-bordered">

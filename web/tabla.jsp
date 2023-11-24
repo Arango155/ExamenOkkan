@@ -37,7 +37,7 @@
                 <a href="index.jsp">Home</a>
                 <a href="tabla.jsp">Tabla</a>
                 <a href="registro.jsp">Registro</a>
-                
+                <a href="acerca.html">Acerca de</a>
             </div>
         </nav>
 

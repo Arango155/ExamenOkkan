@@ -21,11 +21,11 @@ function eliminarTodo (){
     denyButtonText: "Cancelar"
   }).then((result) => {
     if (result.isConfirmed) {
-//      var deleteUrl = 'delete.jsp?id=' + codigo_libro;
-//      setTimeout(function () {
-//        window.location.href = deleteUrl;
-//      }, 1000);
-      mostrarEliminar();
+      var deleteUrl = 'deleteall.jsp';
+      setTimeout(function () {
+        window.location.href = deleteUrl;
+      }, 1000);
+      mostrarEliminarTodo();
     } else if (result.isDenied) {
       Swal.fire("Ningún registro ha sido eliminado!");
     }
@@ -162,4 +162,14 @@ function mostrarEliminar() {
 
   // Mostrar los datos
   document.querySelector("#bodyTable tbody").style.display = "table-row-group";
+}
+
+function mostrarEliminarTodo() {
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Registros eliminados!',
+    showConfirmButton: false,
+  });
+
 }
