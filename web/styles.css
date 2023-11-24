@@ -14,31 +14,72 @@
   
 }
 
+#bodyTable{
+    display: table-row-group;
+}
+
+.links{
+    float: right;
+}
+
+footer{
+    text-align: center;
+    font-size: 20px;
+    margin: 0 10%;
+    align-content: space-between;
+}
+
+p{
+    color: #C2C2C2;
+}
+
+.links a{
+    
+    font-weight: bold;
+    font-size: 20px;
+    
+    text-decoration: none;
+    color: black;
+}
+
+.links a:hover{
+    text-decoration: underline;
+}
+
 .botones{
+    
+    margin-top: 5%;
+    align-content: space-between;
     display: flex;
 }
 
-.tabla{
+.botones button {
+    margin-right: 4%;
+}
 
+.tabla{
+    
     padding: 15%;
 }
+
+
 
 .tabla h1{
     text-align: center;
     align-content: center;
 }
 
-header {
+nav {
    background-color: white; 
    height: auto;
    display: flex;
    align-items: center;
+   justify-content: space-between; /* Add this line to push items to the edges */
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-   top: 0;
    position: sticky;
-   padding: 6px 14px;
+   top: 0;
+   padding: 10px 20px;
    z-index: 99;
- 
 }
 
 .container{

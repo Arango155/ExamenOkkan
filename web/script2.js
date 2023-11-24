@@ -1,12 +1,40 @@
 
 function limpiarTabla() {
 
-  var tabla = document.getElementById('tabla1');
-  var totalFilas = tabla.rows.length;
-  for (var i = totalFilas - 1; i > 0; i--) {
-    tabla.deleteRow(i);
+ var tableBody = document.getElementById("bodyTable");
+ tableBody.style.display = "none";
   }
+
+
+function mostrarDatos (){
+  
+ var tableBody = document.getElementById("bodyTable");
+ tableBody.style.display = "table-row-group";
 }
+
+function eliminarTodo (){
+      Swal.fire({
+    title: "¿Quieres eliminar todos los datos?",
+    text: "Esta accion no se podra revertir",
+    showDenyButton: true,
+    confirmButtonText: "Eliminar",
+    denyButtonText: "Cancelar"
+  }).then((result) => {
+    if (result.isConfirmed) {
+//      var deleteUrl = 'delete.jsp?id=' + codigo_libro;
+//      setTimeout(function () {
+//        window.location.href = deleteUrl;
+//      }, 1000);
+      mostrarEliminar();
+    } else if (result.isDenied) {
+      Swal.fire("Ningún registro ha sido eliminado!");
+    }
+  });
+}
+
+
+
+
 
 function enviarFormulario(event) {
   event.preventDefault();
@@ -17,9 +45,11 @@ XHR.addEventListener('load', function(event) {
   if (XHR.status === 200) {
     console.log('response => ' + XHR.response);
 
+
     // Comprueba la respuesta del sistema
     try {
       const responseData = JSON.parse(XHR.response);
+       
 
       if (responseData === 1) {
         mostrarMensaje();
@@ -27,6 +57,16 @@ XHR.addEventListener('load', function(event) {
       } else if (responseData === 0) {
        
         mostrarError();
+      }
+      
+      else if (responseData === null) {
+       
+        mostrarIndicacion();
+      }
+      
+      else if (responseData === "") {
+       
+        mostrarIndicacion();
       }
     } catch (error) {
       
@@ -67,7 +107,7 @@ function mostrarMensaje() {
     timer: 2500,
   });
 
-  // Reload the page after the timer (2500 milliseconds) finishes
+  // Recarga la pagina
   setTimeout(function () {
     location.reload();
   }, 1500);
@@ -91,4 +131,35 @@ function mostrarIndicacion(){
   showConfirmButton: false,
   timer: 1500,
 });
+}
+
+function eliminar(codigo_libro) {
+  Swal.fire({
+    title: "¿Quieres eliminar este registro?",
+    showDenyButton: true,
+    confirmButtonText: "Eliminar",
+    denyButtonText: "Cancelar"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      var deleteUrl = 'delete.jsp?id=' + codigo_libro;
+      setTimeout(function () {
+        window.location.href = deleteUrl;
+      }, 1000);
+      mostrarEliminar();
+    } else if (result.isDenied) {
+      Swal.fire("Ningún registro ha sido eliminado!");
+    }
+  });
+}
+
+function mostrarEliminar() {
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Registro eliminado!',
+    showConfirmButton: false,
+  });
+
+  // Mostrar los datos
+  document.querySelector("#bodyTable tbody").style.display = "table-row-group";
 }

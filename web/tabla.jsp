@@ -7,8 +7,8 @@
 
 <html>
           <head>
-        <title>Home</title>  
-        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3211/3211296.png"/>
+        <title>Tabla</title>  
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1834/1834048.png"/>
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>       
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,40 +54,7 @@
 
    
                     <div class="container">
-   <form class="form-register"   method="POST"  id="form" name="form"  >
-              
-        <h1>Registro 📝</h1>
-
-            <div class="form-group">
-                <label for="exampleInputName">Codigo</label>
-                <input class="form-control" type="text"  name="uno"  >
-            </div>
-            <div class="form-group">
-                <label for="exampleInputName">Nombre </label>
-                <input class="form-control" type="text"  name="dos"  >
-            </div>
-        
-        <div class="form-group">
-                <label for="exampleInputName">Fecha</label>
-                <input class="form-control" type="text"  name="tres"  >
-            </div>
-        
-         <div class="form-group">
-                <label for="exampleInputName">Autor</label>
-                <input class="form-control" type="text"  name="cuatro"  >
-            </div>
-        
-          
-          <select class="form-control" name="cinco">
-                <option value="1">BLANDA</option>
-                <option value="2">GRUESA</option>
-          </select><br>
-              <button type="submit" onclick="enviarFormulario()" class="btn btn-primary bi bi-send"> Enviar formulario</button>
-       
-              <hr><!-- comment -->
-              <center><p>Asegurate de no repetir los datos</p></center>
-   </form>   
-                    
+ 
                     
                     <div class="tabla">
                         
@@ -144,9 +111,7 @@
 
   
         <script src="script2.js" type="text/javascript"></script>     
-        </div>
-  
-  <footer>
+          <footer>
       
      <i class="bi bi-youtube"></i>
      <i class="bi bi-facebook"></i>
@@ -154,5 +119,5 @@
       <i class="bi bi-whatsapp"></i>
   </footer>
         </body>
-
+</div>
 </html>

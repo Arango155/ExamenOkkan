@@ -7,8 +7,8 @@
 
 <html>
           <head>
-        <title>Home</title>  
-        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3211/3211296.png"/>
+        <title>Registro</title>  
+        <link rel="icon" href="https://static-00.iconduck.com/assets.00/contact-form-icon-1024x1022-llouxxd5.png"/>
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>       
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +56,7 @@
                     <div class="container">
    <form class="form-register"   method="POST"  id="form" name="form"  >
               
-        <h1>Registro 📝</h1>
+              <h1>Registro 📝</h1>
 
             <div class="form-group">
                 <label for="exampleInputName">Codigo</label>
@@ -83,70 +83,19 @@
                 <option value="2">GRUESA</option>
           </select><br>
               <button type="submit" onclick="enviarFormulario()" class="btn btn-primary bi bi-send"> Enviar formulario</button>
-       
-              <hr><!-- comment -->
+          <hr><!-- comment -->
               <center><p>Asegurate de no repetir los datos</p></center>
    </form>   
-                    
-                    
-                    <div class="tabla">
-                        
-                        <h1>Tabla 📊</h1>
-                        
-                        <div class="botones">
-                         
-                        <button  class="btn btn-primary bi bi-search" onclick="mostrarDatos()" > Mostrar Datos</button>
-                                     
-                        <button class="btn btn-light bi bi-eye-slash" onclick="limpiarTabla()"> Ocultar datos</button>
-                        
-                         <button  class="btn btn-danger bi bi-trash" onclick="eliminarTodo()" > Eliminar todos los datos</button>
-                           
-                        
-                        </div>          
                         <br>
-                                        
-                     <table id="tabla1" class="table table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col">Codigo</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Autor</th>
-                            <th scope="col">Pasta</th>
-                            <th scope="col">Acciones</th>
-                          </tr>
-                         
-                     
-                         
-                        </thead>
-                    <div >
-  <tbody id="bodyTable"  >
-    <% while (rs.next()) { %>
-      <tr>
-        <td><%= rs.getString("codigo_libro") %></td>
-        <td><%= rs.getString("nombre") %></td>
-        <td><%= rs.getString("fecha_lanzamiento") %></td>
-        <td><%= rs.getString("autor") %></td>
-        <td><%= rs.getString("descripcion") %></td>
-        <td>
-          <a href="edit.jsp?id=<%= rs.getInt("codigo_libro") %>" class="btn btn-outline-light">✏️</a>
-          <a onclick="eliminar(<%= rs.getInt("codigo_libro") %>)" class="btn btn-light">🗑️</a>
-        </td>
-      </tr>
-    <% } %>
-  </tbody>
-</div>
-
-                      </table>
-                        
-                        
-                    </div>
+                           <br>
+                     <br>
+                           <br>
+               
 
   
-        <script src="script2.js" type="text/javascript"></script>     
-        </div>
-  
-  <footer>
+        <script src="script2.js" type="text/javascript"></script>    
+        
+          <footer>
       
      <i class="bi bi-youtube"></i>
      <i class="bi bi-facebook"></i>
@@ -154,5 +103,5 @@
       <i class="bi bi-whatsapp"></i>
   </footer>
         </body>
-
+</div>
 </html>
