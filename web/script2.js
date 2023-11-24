@@ -1,3 +1,13 @@
+
+function limpiarTabla() {
+
+  var tabla = document.getElementById('tabla1');
+  var totalFilas = tabla.rows.length;
+  for (var i = totalFilas - 1; i > 0; i--) {
+    tabla.deleteRow(i);
+  }
+}
+
 function enviarFormulario(event) {
   event.preventDefault();
   const XHR = new XMLHttpRequest();

@@ -83,14 +83,15 @@
                         
                         <h1>Tabla 📊</h1>
                         
-                        
+                        <div class="botones">
                          <form class="d-flex" role="search">
                                        <input  class="btn btn-primary" type="submit" value="Mostrar datos">
                                         </form>
-                                       
+                        <button class="btn btn-light" onclick="limpiarTabla()">Limpiar tabla 🧹</button>
+                        </div>          
                         <br>
                                         
-                     <table class="table table-bordered">
+                     <table id="tabla1" class="table table-bordered">
                         <thead>
                           <tr>
                             <th scope="col">Codigo</th>
